@@ -1,0 +1,58 @@
+/*Background*/
+
+/*Header*/
+#header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background-color: rgb(36, 34, 34);
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+.logo{
+    width: 50%;
+}
+
+/*Navbar*/
+#navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar li{
+    list-style: none;
+    margin: 0 15px;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+}
+
+#navbar li a{
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 550;
+    color: azure;
+    transition: 0.25s ease;
+}
+
+#navbar li a:hover{
+    color: rgb(144, 16, 250);
+}
+
+#navbar li a.active{
+    color: rgb(144, 16, 250);
+}
+
+
+
+
+
+/*Log In/Sign Up
+#Mainform{
+    text-align: center;
+}
+*/
