@@ -44,10 +44,19 @@
             <input type="text" class="form-control" id="genderInput" placeholder="Gender">
             
         </div>
-        <div class="form-floating mb-3">
-            <label for="goalInput">Goals</label>
-            <input type="text" class="form-control" id="goalsInput" placeholder="Strength, weight loss, etc">
-            
+        <!--<div id = "chooseSuperButton" class="form-floating mb-3">
+            <button id = "batButton" type="submit" class="btn btn-primary">Batman</button>
+            <button id = "nightWingButton" type="submit" class="btn btn-primary">Nightwing</button>
+            <button id = "flashButton" type="submit" class="btn btn-primary">The Flash</button>
+        </div>-->
+
+        <div>
+            <label for="dog-names">Choose a superhero:</label> 
+                <select name="dog-names" id="dog-names"> 
+                    <option value="batmanOption">Batman</option> 
+                    <option value="nightWingOption">Nightwing</option> 
+                    <option value="flashButton">The Flash</option> 
+                </select>
         </div>
      
      
@@ -96,6 +105,14 @@
         let GenderInput = document.getElementById("genderInput");
         let GoalsInput = document.getElementById("goalsInput");
         let MainForm = document.getElementById("Mainform");
+        //let batButton = document.getElementById("batButton");
+        //let nightWingButton = document.getElementById("nightWingButton");
+        //let flashButton = document.getElementById("flashButton");
+        
+        let superHeroInput = null;
+        
+        
+        
      
      
         let RegisterUser = evt =>{
@@ -106,6 +123,7 @@
                     userName: UserNameInput.value,
                     gender: GenderInput.value,
                     goals: GoalsInput.value,
+                    superHero: superHeroInput.value,
                 })
                 setTimeout(()=> {window.location.href='personal.html'}, 2000); //2 sec timeout
                 })
