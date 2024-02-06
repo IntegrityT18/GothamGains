@@ -24,32 +24,26 @@
 <body>
     <form id="Mainform" class = "w-25 m-4">
         <div class="form-floating mb-3">
-            <label for="emailInput">Email address</label>
             <input type="email" class="form-control" id="emailInput" placeholder="name@example.com">
-            
+            <label for="emailInput">Email Address</label>
         </div>
-        <div class="form-floating mb-3">
-            <label for="passwordInput">Password</label>
-            <input type="password" class="form-control" id="passwordInput" placeholder="Password">
-            
-        </div>
-        <div class="form-floating mb-3">
-            <label for="userName">Username</label>
-            <input type="text" class="form-control" id="userNameInput" placeholder="Username">
-            
-        </div>
-        <div class="form-floating mb-3">
-            <label for="genderInput">Gender</label>
-            <input type="text" class="form-control" id="genderInput" placeholder="Gender">
-            
-        </div>
-        <!--<div id = "chooseSuperButton" class="form-floating mb-3">
-            <button id = "batButton" type="submit" class="btn btn-primary">Batman</button>
-            <button id = "nightWingButton" type="submit" class="btn btn-primary">Nightwing</button>
-            <button id = "flashButton" type="submit" class="btn btn-primary">The Flash</button>
-        </div>-->
 
-        <div>
+        <div class="form-floating mb-3">
+            <input type="password" class="form-control" id="passwordInput" placeholder="Password">
+            <label for="passwordInput">Password</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="userNameInput" placeholder="Username">
+            <label for="userName">Username</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="genderInput" placeholder="Gender">
+            <label for="genderInput">Gender</label>
+        </div>
+
+        <!--<div>
             <label for="hero-names">Choose a superhero:</label> 
                 <select name="hero-names" id="hero-names"> 
                     <option value="batmanOption">Batman</option>
@@ -57,9 +51,8 @@
                     <option value="baneOption">Bane</option>
                     <option value="catwomenOption">Catwoman</option>
                 </select>
-        </div>
-     
-     
+        </div>-->
+
         <button type="submit" class="btn btn-primary"> Create Profile</button>
         <a href ="login.html"><button type="button" class="btn btn-primary ne-2"> Sign In</button></a>
      </form>
@@ -105,11 +98,8 @@
         let GenderInput = document.getElementById("genderInput");
         let GoalsInput = document.getElementById("goalsInput");
         let MainForm = document.getElementById("Mainform");
-        //let batButton = document.getElementById("batButton");
-        //let nightWingButton = document.getElementById("nightWingButton");
-        //let flashButton = document.getElementById("flashButton");
-        
-        let superHeroInput = null;
+        //let e = document.getElementById("hero-names");
+        //let heroOption = e.options[e.selectedIndex].text;
         
         
         
@@ -123,7 +113,7 @@
                     userName: UserNameInput.value,
                     gender: GenderInput.value,
                     goals: GoalsInput.value,
-                    superHero: superHeroInput.value,
+                    //superHero: heroOption.value,
                 })
                 setTimeout(()=> {window.location.href='personal.html'}, 2000); //2 sec timeout
                 })
