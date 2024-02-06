@@ -51,8 +51,9 @@
 
 
 
-/*Log In/Sign Up
+/*Login/Signup*/
 #Mainform{
     text-align: center;
+    position: relative;
+    left: 37%;
 }
-*/
