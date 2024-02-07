@@ -1,4 +1,9 @@
 /*Background*/
+:root{
+    background-image: url();
+    background-size: cover;
+    background-size: auto;
+}
 
 /*Header*/
 #header{
@@ -57,3 +62,5 @@
     position: relative;
     left: 37%;
 }
+
+

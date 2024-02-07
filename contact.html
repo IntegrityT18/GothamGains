@@ -12,7 +12,7 @@
     <a href="#"><img src="images/tempLogo.png" class="logo" alt="Logo"></a>
     <div>
         <ul id="navbar">
-            <li><a href="home.html">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="calendar.html">Calendar</a></li>
             <li><a  class='active' href="contact.html">Contact Us</a></li>
             <li><a href="personal.html">Your Info</a></li>
@@ -21,7 +21,58 @@
         </ul>
     </div>
 </section>
+
+<section class="form" id="contactForm">
+    <h3 class="formTitle">Contact Us!</h3>
+    <div class="formBox">
+        <form onsubmit="email(); reset(); return false;">
+            <div class="formInputRow">
+                <div class="formInputGroup">
+                    <label>Name:</label>
+                    <input class="formInput" id="contactName" type="text" placeholder="Ex. Kenneth Carson">
+                </div>
+                <div class="formInputGroup">
+                    <label>Phone #:</label>
+                    <input class="formInput" id="contactPhone" type="text" placeholder="Ex. +1 630-656-8097">
+                </div>
+            </div>
+            <div class="formInputRow">
+                <div class="formInputGroup">
+                    <label>Email:</label>
+                    <input class="formInput" id="contactEmail" type="email" placeholder="name@gmail.com">
+                </div>
+                <div class="formInputGroup">
+                    <label>Subject:</label>
+                    <input class="formInput" id="contactSubject" type="text" placeholder="Restaurant Feedback, etc.">
+                </div>
+            </div>
+            <label>Message:</label>      
+            <div><textarea class="formTextArea" id="contactMessage" rows="5" placeholder="Type your Message Here..."></textarea></div>
+            <button class="formSubmitButton" id="contactSubmitButton" type="submit">Send</button>
+            <p class="formBottomText">Feel free to send us feedback! It's greatly appreciated.</p>
+        </form>
+    </div>
+</section>
 <body>
     
 </body>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+    function email(){
+            Email.send({
+            Host : "smtp.elasticemail.com",
+            Username : "gamedaygrillbar@gmail.com",
+            Password : "7679A973BE4A94BC7960C56C552B867F1895",
+            To : "gamedaygrillbar@gmail.com",
+            From : "gamedaygrillbar@gmail.com",
+            Subject : document.getElementById("contactSubject").value,
+            Body : "Name: " + document.getElementById("contactName").value +
+                    "<br> Email: " + document.getElementById("contactEmail").value +
+                    "<br> Phone #: " + document.getElementById("contactPhone").value +
+                    "<br> Message: " + document.getElementById("contactMessage").value
+            }).then(
+            message => console.log(message)
+        );  
+    }
+    </script>
 </html>

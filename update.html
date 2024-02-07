@@ -50,4 +50,61 @@
         
      </form>
 </body>
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
+    import { getDatabase , get, ref, child, update} from "https://www.gstatic.com/firebasejs/10.6.0/firebase-database.js";
+    import { getAuth, signInWithEmailAndPassword , updateProfile} from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+  
+  
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyDPxqyTcuA6zJBixCEsIoenxyGD_eRJs60",
+        authDomain: "mobileapp2023-b3b6a.firebaseapp.com",
+        databaseURL: "https://mobileapp2023-b3b6a-default-rtdb.firebaseio.com",
+        projectId: "mobileapp2023-b3b6a",
+        storageBucket: "mobileapp2023-b3b6a.appspot.com",
+        messagingSenderId: "52173022565",
+        appId: "1:52173022565:web:2380947e753146dd332d8c"
+    };
+  
+  
+  
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase();
+    const auth = getAuth(app);
+    const dbref = ref(db);
+  
+  
+  
+  
+    let FnameInput = document.getElementById("fNameInput");
+    let LnameInput = document.getElementById("lNameInput");
+    let cityInput = document.getElementById("cityInput");
+    let MainForm = document.getElementById("Mainform");
+  
+  
+    let updateInfo = () =>{
+         const uid = auth.currentUser.uid;
+         update(ref(db, 'users/' + uid),{
+                city: cityInput.value,
+                firstName: FnameInput.value,
+                lastName: LnameInput.value,
+            })
+            setTimeout(()=> {window.location.href='home.html'}, 2000);
+    }
+  
+  
+    MainForm.addEventListener("submit", updateInfo);
+  
+  
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  
 </html>

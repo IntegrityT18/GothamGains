@@ -12,7 +12,7 @@
     <a href="#"><img src="images/tempLogo.png" class="logo" alt="Logo"></a>
     <div>
         <ul id="navbar">
-            <li><a href="home.html">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="calendar.html">Calendar</a></li>
             <li><a href="contact.html">Contact Us</a></li>
             <li><a href="personal.html">Your Info</a></li>
@@ -43,7 +43,7 @@
             <label for="genderInput">Gender</label>
         </div>
 
-        <!--<div>
+        <div>
             <label for="hero-names">Choose a superhero:</label> 
                 <select name="hero-names" id="hero-names"> 
                     <option value="batmanOption">Batman</option>
@@ -51,7 +51,7 @@
                     <option value="baneOption">Bane</option>
                     <option value="catwomenOption">Catwoman</option>
                 </select>
-        </div>-->
+        </div>
 
         <button type="submit" class="btn btn-primary"> Create Profile</button>
         <a href ="login.html"><button type="button" class="btn btn-primary ne-2"> Sign In</button></a>
@@ -96,10 +96,9 @@
         let PasswordInput = document.getElementById("passwordInput");
         let UserNameInput = document.getElementById("userNameInput");
         let GenderInput = document.getElementById("genderInput");
-        let GoalsInput = document.getElementById("goalsInput");
         let MainForm = document.getElementById("Mainform");
-        //let e = document.getElementById("hero-names");
-        //let heroOption = e.options[e.selectedIndex].text;
+        let e = document.getElementById("hero-names");
+        let heroOption = e.options[e.selectedIndex].text;
         
         
         
@@ -112,8 +111,7 @@
                 set(ref(db, 'users/'+credentials.user.uid),{
                     userName: UserNameInput.value,
                     gender: GenderInput.value,
-                    goals: GoalsInput.value,
-                    //superHero: heroOption.value,
+                    superHero: heroOption,
                 })
                 setTimeout(()=> {window.location.href='personal.html'}, 2000); //2 sec timeout
                 })

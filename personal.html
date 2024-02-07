@@ -12,7 +12,7 @@
     <a href="#"><img src="images/tempLogo.png" class="logo" alt="Logo"></a>
     <div>
         <ul id="navbar">
-            <li><a href="home.html">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="calendar.html">Calendar</a></li>
             <li><a href="contact.html">Contact Us</a></li>
             <li><a class='active' href="personal.html">Your Info</a></li>
@@ -25,7 +25,7 @@
     <form id="Mainform" class = "w-25 m-4">
         <h2 id="userName"></h2>
         <h2 id="gender"></h2>
-        <h2 id="goals"></h2>
+        <h2 id="hero"></h2>
      
         <button id="logOutButton" type="submit" class="btn btn-primary">Log Out</button>
         <a href ="update.html"><button type="button" class="btn btn-primary ne-2">Update Your Info</button></a>
@@ -67,14 +67,14 @@
      
      
         let userNameInput = document.getElementById("userName");
-        let goalsInput = document.getElementById("goals");
+        let heroInput = document.getElementById("hero");
         let genderInput = document.getElementById("gender");
         let logOutButton = document.getElementById("logOutButton");
      
      
         let signOut = ()=>{
             auth.signOut();
-            window.location.href='home.html';
+            window.location.href='index.html';
         }
 
         let getDataInfo = () =>{
@@ -84,13 +84,13 @@
                     get(child(dbref, 'users/'+userID)).then((snapshot)=>{
                         if(snapshot.exists){
                             let userNameData = snapshot.val().userName;
-                            let goalsData = snapshot.val().goals;
+                            let heroData = snapshot.val().superHero;
                             let genderData = snapshot.val().gender;
      
      
                             setTimeout(()=>{console.log("getting data");}, 1000);
                             userNameInput.innerText='Username: ' + userNameData;
-                            goalsInput.innerText = 'Goal: ' + goalsData;
+                            heroInput.innerText = 'Goal: ' + heroData;
                             genderInput.innerText = 'Gender: ' + genderData;
                         }
                     })
