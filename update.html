@@ -1,4 +1,3 @@
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -24,30 +23,23 @@
 <body>
     <form id="Mainform" class = "w-25 m-4">
         <div class="form-floating mb-3">
-            <label for="emailInput">Email address</label>
-            <input type="email" class="form-control" id="emailInput" placeholder="name@example.com">
-        </div>
-        <div class="form-floating mb-3">
-            <label for="passwordInput">Password</label>
-            <input type="password" class="form-control" id="passwordInput" placeholder="Password">
-            
-        </div>
-        <div class="form-floating mb-3">
-            <label for="userName">New Username</label>
             <input type="text" class="form-control" id="userNameInput" placeholder="Username">
-            
+            <label for="userName">New Username</label>
+
         </div>
-        <div class="form-floating mb-3">
-            <label for="goalInput">New Goal</label>
-            <input type="text" class="form-control" id="goalsInput" placeholder="Strength, weight loss, etc">
-            
+        <div>
+            <label for="hero-names">Choose a new superhero:</label> 
+                <select name="hero-names" id="hero-names"> 
+                    <option value="batmanOption">Batman</option>
+                    <option value="nightWingOption">Nightwing</option>
+                    <option value="baneOption">Bane</option>
+                    <option value="catwomenOption">Catwoman</option>
+                </select>
         </div>
-     
-     
-        <button id="logOutButton" type="submit" class="btn btn-primary">Log Out</button>
-        <a href ="update.html"><button type="button" class="btn btn-primary ne-2">Update Your Info</button></a>
-        
-        
+
+        <button id="updateButton" type="submit" class="btn btn-primary">Update</button>
+        <a href ="personal.html"><button type="button" class="btn btn-primary ne-2">Return to Home</button></a>
+
      </form>
 </body>
 <script type="module">
@@ -60,7 +52,7 @@
   
   
   
-  
+
     // Your web app's Firebase configuration
     const firebaseConfig = {
         apiKey: "AIzaSyDPxqyTcuA6zJBixCEsIoenxyGD_eRJs60",
@@ -71,40 +63,39 @@
         messagingSenderId: "52173022565",
         appId: "1:52173022565:web:2380947e753146dd332d8c"
     };
-  
-  
-  
-  
+
+
+
+
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const db = getDatabase();
     const auth = getAuth(app);
     const dbref = ref(db);
-  
-  
-  
-  
-    let FnameInput = document.getElementById("fNameInput");
-    let LnameInput = document.getElementById("lNameInput");
-    let cityInput = document.getElementById("cityInput");
+
+
+
+
+    let UserNameInput = document.getElementById("userNameInput");
     let MainForm = document.getElementById("Mainform");
-  
-  
+    let e = document.getElementById("hero-names");
+    let heroOption = e.options[e.selectedIndex].text;
+
+
     let updateInfo = () =>{
          const uid = auth.currentUser.uid;
          update(ref(db, 'users/' + uid),{
-                city: cityInput.value,
-                firstName: FnameInput.value,
-                lastName: LnameInput.value,
+                userName: UserNameInput.value,
+                superHero: heroOption,
             })
-            setTimeout(()=> {window.location.href='home.html'}, 2000);
+            setTimeout(()=> {window.location.href='personal.html'}, 2000);
     }
-  
-  
+
+
     MainForm.addEventListener("submit", updateInfo);
-  
-  
+
+
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-  
+
 </html>
