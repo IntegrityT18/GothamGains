@@ -1,3 +1,19 @@
+.bebas-neue-regular {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.titan-one-regular {
+    font-family: "Titan One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h2 {
+    font-family: "Bebas Neue", sans-serif;
+}
+
 /*Background*/
 :root{
     background-image: url();
@@ -45,15 +61,18 @@
 }
 
 #navbar li a:hover{
-    color: rgb(144, 16, 250);
+    color: rgb(41, 80, 255);
 }
 
 #navbar li a.active{
-    color: rgb(144, 16, 250);
+    color: rgb(41, 80, 255);
 }
 
 
-
+/*Home*/
+#info{
+    text-align: center;
+}
 
 
 /*Login/Signup*/
