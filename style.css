@@ -14,72 +14,228 @@ h2 {
     font-family: "Bebas Neue", sans-serif;
 }
 
-/*Background*/
-:root{
-    background-image: url();
-    background-size: cover;
-    background-size: auto;
+p {
+    color: azure;
 }
 
-/*Header*/
-#header{
+.logo {
+    height: auto;
+    width: 100px;
+}
+
+/*****************Background**************************/
+body {
+    background-image: url(https://wallpapers.com/images/hd/chicago-city-skyline-night-5oxkbyiw76co3wx9.jpg);
+}
+
+/********************Header***************************/
+#header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 20px 40px;
-    background-color: rgb(36, 34, 34);
+    background-color: rgb(4, 4, 4);
     z-index: 999;
     position: sticky;
     top: 0;
     left: 0;
 }
 
-.logo{
-    width: 50%;
-}
-
-/*Navbar*/
-#navbar{
+/***************************Navbar*****************************/
+#navbar {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#navbar li{
+#navbar li {
     list-style: none;
     margin: 0 15px;
     position: relative;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Bebas Neue', sans-serif;
 }
 
-#navbar li a{
+#navbar li a {
     text-decoration: none;
-    font-size: 18px;
+    font-size: 25px;
     font-weight: 550;
     color: azure;
     transition: 0.25s ease;
 }
 
-#navbar li a:hover{
+#navbar li a:hover {
     color: rgb(41, 80, 255);
 }
 
-#navbar li a.active{
+#navbar li a.active {
     color: rgb(41, 80, 255);
 }
 
 
-/*Home*/
-#info{
+/***************************Home***************************/
+#info {
+    margin: 40px 0;
+    
+    text-align: center;
+    align-items: center;
+    color: azure;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: rgb(4, 4, 4);;
+    box-shadow: 0 5px 15px rgb(36, 34, 34);
+    border-radius: 30px;
+}
+
+#info h2 {
+    position: relative;
+    text-align: center;
+    color: rgb(41, 80, 255);
+    font-size: 80px;
+}
+
+#info p {
+    font-size: 20px;
+}
+
+#info-cont {
+    background: rgb(4, 4, 4);
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgb(36, 34, 34);
+}
+
+#info-cont h2{
+    text-align: center;
+    font-size: 80px;
+    color: rgb(41, 80, 255);
+}
+
+#char {
+    display: flex;
+    justify-content: center;
+
+}
+
+.list{
+    color: azure;
     text-align: center;
 }
 
+#bat-list{
+    background: rgb(4, 4, 4);
+    border-radius: 5%;
+    margin-right: 35px;
+}
 
-/*Login/Signup*/
-#Mainform{
+#night-list{
+    background: rgb(4, 4, 4);
+    border-radius: 5%;
+    margin-right: 35px;
+}
+
+#cat-list{
+    background: rgb(4, 4, 4);
+    border-radius: 5%;
+    margin-right: 35px;
+}
+
+#bane-list{
+    background: rgb(4, 4, 4);
+    border-radius: 5%;
+}
+
+
+#info-cont p{
+    text-align: center;
+    display: block;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 25px;
+    color: rgb(41, 80, 255);
+}
+
+
+#info-cont #bat{
+    margin-right: 40px;
+}
+
+#info-cont #night{
+    margin-right: 40px;
+}
+
+#info-cont #cat{
+    margin-right: 40px;
+}
+
+#batImg {
+    max-width: 100%;
+    height: 400px;
+    border-radius: 30px;
+    margin-right: 40px;
+}
+
+#batImg:hover {
+    box-shadow: 0 0 30px rgba(41, 80, 255, 0.65);
+}
+
+#nightImg {
+    max-width: 100%;
+    height: 400px;
+    border-radius: 30px;
+    margin-right: 40px;
+}
+
+#nightImg:hover {
+    box-shadow: 0 0 30px rgba(41, 80, 255, 0.65);
+}
+
+#catImg {
+    max-width: 100%;
+    height: 400px;
+    border-radius: 30px;
+    margin-right: 40px;
+}
+
+#catImg:hover {
+    box-shadow: 0 0 30px rgba(41, 80, 255, 0.65);
+}
+
+#baneImg {
+    max-width: 100%;
+    height: 400px;
+    border-radius: 30px;
+}
+
+#baneImg:hover {
+    box-shadow: 0 0 30px rgba(41, 80, 255, 0.65);
+}
+
+#hero-txt {
+    display: flex;
+    justify-content: center;
+}
+
+/**************Personal***************/
+#Mainform #username {
+    color: azure;
+}
+
+#Mainform #gender {
+    color: azure;
+}
+
+#Mainform #hero {
+    color: azure;
+}
+
+
+/**************Login/Signup***************/
+#Mainform {
     text-align: center;
     position: relative;
     left: 37%;
 }
+
+
+/***************Contact*******************/
+
 
 

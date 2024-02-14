@@ -12,11 +12,10 @@
     <div>
         <ul id="navbar">
             <li><a href="home.html">Home</a></li>
-            <li><a href="calendar.html">Calendar</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
             <li><a href="personal.html">Your Info</a></li>
+            <li><a href="calendar.html">Calendar</a></li>
             <li><a href="login.html">Log In</a></li>
-            <li><a href="myplans.html"><i class="bi-bag-fill" style="font-size: 26px;"></i></a></li>
+            <li><a href="contact.html">Contact Us</a></li>
         </ul>
     </div>
 </section>
@@ -29,11 +28,12 @@
         </div>
         <div>
             <label for="hero-names">Choose a new superhero:</label> 
-                <select name="hero-names" id="hero-names"> 
-                    <option value="batmanOption">Batman</option>
-                    <option value="nightWingOption">Nightwing</option>
-                    <option value="baneOption">Bane</option>
-                    <option value="catwomenOption">Catwoman</option>
+                <select name="hero-names" id="hero-names">
+                    <option value="Choose a new hero">Choose a new hero</option>
+                    <option value="Batman">Batman</option>
+                    <option value="Nightwing">Nightwing</option>
+                    <option value="Bane">Bane</option>
+                    <option value="Catwoman">Catwoman</option>
                 </select>
         </div>
 
@@ -78,15 +78,14 @@
 
     let UserNameInput = document.getElementById("userNameInput");
     let MainForm = document.getElementById("Mainform");
-    let e = document.getElementById("hero-names");
-    let heroOption = e.options[e.selectedIndex].text;
+    let heroOption = document.getElementById("hero-names");
 
 
     let updateInfo = () =>{
          const uid = auth.currentUser.uid;
          update(ref(db, 'users/' + uid),{
                 userName: UserNameInput.value,
-                superHero: heroOption,
+                superHero: heroOption.value,
             })
             setTimeout(()=> {window.location.href='personal.html'}, 2000);
     }
