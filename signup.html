@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
 </head>
 <section id="header">
-    <a href="#"><img src="images/reallogo.jpeg" class="logo" alt="Logo"></a>
+    <a href="#"><img src="images/logo.png" class="logo" alt="Logo"></a>
     <div>
         <ul id="navbar">
             <li><a href="index.html">Home</a></li>
@@ -46,8 +46,8 @@
             <label for="genderInput">Gender</label>
         </div>
 
-        <div>
-            <label for="hero-names">Choose a superhero:</label> 
+        <div id="hero-drop">
+            <label for="hero-names">Your Journey:</label> 
                 <select name="hero-names" id="hero-names">
                     <option value="optionSelect">Choose a Hero</option>
                     <option value="Batman">Batman</option>
@@ -57,8 +57,10 @@
                 </select>
         </div>
 
-        <button type="submit" class="btn btn-primary"> Create Profile</button>
-        <a href ="login.html"><button type="button" class="btn btn-primary ne-2"> Sign In</button></a>
+        <div id="buttons">
+            <button type="submit" class="btn btn-primary btn-lg">Become Your Hero!</button>
+            <a href ="login.html"><button type="button" class="btn btn-primary btn-lg ne-2">Log In</button></a>
+        </div>
      </form>
      
 

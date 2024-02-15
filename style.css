@@ -20,7 +20,7 @@ p {
 
 .logo {
     height: auto;
-    width: 100px;
+    width: 120px;
 }
 
 /*****************Background**************************/
@@ -33,7 +33,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 40px;
+    padding: 0px 40px;
     background-color: rgb(4, 4, 4);
     z-index: 999;
     position: sticky;
@@ -56,7 +56,7 @@ body {
 
 #navbar li a {
     text-decoration: none;
-    font-size: 25px;
+    font-size: 30px;
     font-weight: 550;
     color: azure;
     transition: 0.25s ease;
@@ -213,13 +213,13 @@ body {
     justify-content: center;
 }
 
-/**************Personal***************/
+/**************Plans***************/
 
 
 /***************Calendar***************/
 #Mainform {
   color: azure;
-  background:rgb(4, 4, 4);
+  
   border-radius: 30px;
 }
 
@@ -521,21 +521,34 @@ body {
     }
   }
 
-  #cal-buttons {
+  #buttons {
     display: flex;
     align-items: center;
     justify-content: center;
     justify-content: space-around;
+    margin-top: 5%;
   }
 
 
 
-/**************Login/Signup***************/
+/**************Login/Signup/Update***************/
 #Mainform {
     text-align: center;
     position: relative;
     left: 37%;
 }
+
+.form-floating {
+  color: rgb(41, 80, 255);
+  font-family: "Bebas Neue", sans-serif;
+}
+
+#hero-drop {
+  background: rgb(4, 4, 4);
+  height: 30px;
+  border-radius: 30px
+}
+
 
 
 /***************Contact*******************/

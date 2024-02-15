@@ -11,7 +11,7 @@
     <title>Log In</title>
 </head>
 <section id="header">
-    <a href="#"><img src="images/reallogo.jpeg" class="logo" alt="Logo"></a>
+    <a href="#"><img src="images/logo.png" class="logo" alt="Logo"></a>
     <div>
         <ul id="navbar">
             <li><a href="index.html">Home</a></li>
@@ -35,8 +35,10 @@
         </div>
      
      
-        <button type="submit" class="btn btn-primary"> Login</button>
-        <a href ="signup.html"><button type="button" class="btn btn-primary ne-2"> Sign Up NOW!</button></a>
+        <div id="buttons">
+            <button type="submit" class="btn btn-primary btn-lg"> Login</button>
+            <a href ="signup.html"><button type="button" class="btn btn-primary btn-lg ne-2"> Sign Up NOW!</button></a>
+        </div>
      
      
      </form>
@@ -78,7 +80,7 @@
 
         let EmailInput = document.getElementById("emailInput");
         let PasswordInput = document.getElementById("passwordInput");
-        let MainForm = document.getElementById("MainForm");
+        let MainForm = document.getElementById("Mainform");
 
 
         let SignInUser = evt =>{
@@ -96,7 +98,7 @@
         }
 
 
-        MainForm.addEventListener("submit", SignInUser);
+        MainForm.addEventListener('submit', SignInUser);
 
 
 </script>
