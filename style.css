@@ -60,6 +60,7 @@ body {
     font-weight: 550;
     color: azure;
     transition: 0.25s ease;
+    font-family: "Bebas Neue", sans-serif;
 }
 
 #navbar li a:hover {
@@ -213,20 +214,19 @@ body {
 }
 
 /**************Personal***************/
-#Mainform #username {
-    color: azure;
-}
-
-#Mainform #gender {
-    color: azure;
-}
-
-#Mainform #hero {
-    color: azure;
-}
 
 
 /***************Calendar***************/
+#Mainform {
+  color: azure;
+  background:rgb(4, 4, 4);
+  border-radius: 30px;
+}
+
+#Mainform h2{
+  font-family: "Bebas Neue", sans-serif;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -236,12 +236,11 @@ body {
   
   .calendar {
     height: 30rem;
-    width: max-content;
     background-color: white;
-    border-radius: 25px;
+    border-radius: 20px;
     overflow: hidden;
     padding: 35px 50px 0px 50px;
-    
+    margin-bottom: 30px;
   }
   
   .calendar {
@@ -521,6 +520,14 @@ body {
       opacity: 1;
     }
   }
+
+  #cal-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+  }
+
 
 
 /**************Login/Signup***************/
