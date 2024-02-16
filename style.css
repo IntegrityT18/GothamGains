@@ -12,6 +12,7 @@
 
 h2 {
     font-family: "Bebas Neue", sans-serif;
+    color: azure;
 }
 
 p {
@@ -214,13 +215,129 @@ body {
 }
 
 /**************Plans***************/
+.planimg{
+  display: flex;
+  justify-content: center;
+}
+
+#plan-bat {
+  margin-right: 60%;
+  margin-bottom: 5px;
+  width: 30%;
+}
+
+#img-bat {
+  width: 30%;
+}
+
+#bat-plan {
+  text-align: center;
+  color: azure;
+  margin-top: 5%;
+  background: rgb(4, 4, 4);
+  padding: 1em 0 1em 0;
+}
+
+#bat-plan h2 {
+  color: rgb(41, 80, 255);
+  text-decoration: underline;
+  font-size: 40px;
+}
+
+#bat-plan-list {
+  list-style-position: inside;
+  text-align: center;
+}
+
+#plan-night {
+  margin-right: 30%;
+  margin-bottom: 5px;
+  width: 30%;
+}
+
+#img-night {
+width: 30%;
+}
+
+#night-plan{
+  text-align: center;
+  color: azure;
+  background: rgb(4, 4, 4);
+  margin-top: 10px;
+}
+
+#night-plan h2 {
+  color: rgb(41, 80, 255);
+  text-decoration: underline;
+  font-size: 40px;
+}
+
+#night-plan-list {
+  list-style-position: inside;
+  text-align: center;
+}
+
+#plan-cat {
+  margin-right: 30%;
+  margin-bottom: 5px;
+  width: 30%;
+}
+
+#img-cat {
+  width: 30%;
+}
+
+#cat-plan{
+  text-align: center;
+  color: azure;
+  background: rgb(4, 4, 4);
+  margin-top: 10px;
+}
+
+#cat-plan h2 {
+  color: rgb(41, 80, 255);
+  text-decoration: underline;
+  font-size: 40px;
+}
+
+#cat-plan-list {
+  list-style-position: inside;
+  text-align: center;
+}
+
+#plan-bane {
+  margin-right: 30%;
+  margin-bottom: 5px;
+  width: 30%;
+}
+
+#img-bane {
+width: 30%;
+}
+
+#bane-plan{
+  text-align: center;
+  color: azure;
+  background: rgb(4, 4, 4);
+  margin-top: 10px;
+}
+
+#bane-plan h2 {
+  color: rgb(41, 80, 255);
+  text-decoration: underline;
+  font-size: 40px;
+}
+
+#bane-plan-list {
+  list-style-position: inside;
+  text-align: center;
+}
+
 
 
 /***************Calendar***************/
 #Mainform {
   color: azure;
-  
-  border-radius: 30px;
 }
 
 #Mainform h2{
