@@ -312,7 +312,7 @@ width: 30%;
 }
 
 #img-bane {
-width: 30%;
+  width: 30%;
 }
 
 #bane-plan{
@@ -331,6 +331,24 @@ width: 30%;
 #bane-plan-list {
   list-style-position: inside;
   text-align: center;
+}
+
+#plan-signup {
+  text-align: center;
+  color: azure;
+  background: rgb(4, 4, 4);
+  margin-top: 10px;
+}
+
+#plan-signup h2 {
+  color: rgb(41, 80, 255);
+  text-decoration: underline;
+  font-size: 40px;
+}
+
+#plan-signup button {
+  width: 350px;
+  height: 50px;
 }
 
 
