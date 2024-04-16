@@ -244,9 +244,12 @@ body {
   font-size: 40px;
 }
 
-#bat-plan-list {
-  list-style-position: inside;
+.plans{
   text-align: center;
+  color: azure;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
 }
 
 #plan-night {
@@ -679,9 +682,17 @@ width: 30%;
 }
 
 #hero-drop {
-  background: rgb(4, 4, 4);
+  background: azure;
   height: 30px;
-  border-radius: 30px
+  border-radius: 10px;
+  font-size: 20px;
+  color: rgb(41, 80, 255);
+  text-align: left;
+}
+
+#hero-names {
+  border-radius: 30px;
+  align-items: center;
 }
 
 

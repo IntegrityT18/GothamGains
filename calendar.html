@@ -72,8 +72,8 @@
     </div>
 
     <div id="buttons">
-      <button id="logOutButton" type="submit" class="btn btn-primary btn-lg">Log Out</button>
-      <a href ="update.html"><button type="button" class="btn btn-primary btn-lg ne-2">Update Profile</button></a>
+      <button id="logOutButton" style="display: none;" type="submit" class="btn btn-primary btn-lg">Log Out</button>
+      <a href ="update.html"><button id="updateButton" type="button" style="display: none;" class="btn btn-primary btn-lg ne-2">Update Profile</button></a>
     </div>
 </body>
 <script type="module">
@@ -106,6 +106,8 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebas
         let userNameInput = document.getElementById("userName");
         let heroInput = document.getElementById("hero");
         let genderInput = document.getElementById("gender");
+        let updateButton = document.getElementById("updateButton");
+        let logOutButton = document.getElementById("logOutButton");
 
         let signOut = ()=>{
         auth.signOut();
@@ -127,11 +129,12 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebas
                         userNameInput.innerText='Welcome ' + userNameData + "!";
                         heroInput.innerText = 'Current Journey: ' + heroData;
                         genderInput.innerText = 'Gender: ' + genderData;
+                        
+                        updateButton.style.display = "block";
+                        logOutButton.style.display = "block";
                     }
 
-                    if(heroData == "Batman") {
-                      document.getElementById("bat-cal").style.display = 'none';
-                    }
+
                 })
             }else{
                 console.log("Error getting user data");
