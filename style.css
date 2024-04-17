@@ -367,12 +367,11 @@ width: 30%;
 
 
 /***************Calendar***************/
-#Mainform {
-  color: azure;
-}
 
 #Mainform h2{
   font-family: "Bebas Neue", sans-serif;
+  color: rgb(41, 80, 255);
+  text-decoration: underline;
 }
 
 * {
