@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   </head>
 <section id="header">
     <a href="index.html"><img src="images/logo.png" class="logo" alt="Logo"></a>
@@ -27,53 +28,72 @@
         <h2 id="userName"></h2>
         <h2 id="gender"></h2>
         <h2 id="hero"></h2>
-
-
     </form>
 
-    <div id="cal-cont">
-      <div class="calendar">
-        <div class="calendar-header">
-          <span class="month-picker" id="month-picker"> May </span>
-          <div class="year-picker" id="year-picker">
-            <span class="year-change" id="pre-year">
-              <pre><</pre>
-            </span>
-            <span id="year">2020 </span>
-            <span class="year-change" id="next-year">
-              <pre>></pre>
-            </span>
+    <div class="calendar">
+      <div class="calendar_inner">
+        <div class="calendar_controls">
+          <div class="calendar_headings">
+            <span class="material-symbols-outlined">arrow_back</span>
+            <h2 class="month_year">October, 2023</h2>
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </div>
+          <div class="current_datetime">
+            <p class="daytxt">Today</p>
+            <p class="datetxt">Tue, 10, Oct 2023</p>
+          </div>
+          <div class="days_date">
+            <ul class="days">
+              <li>Sun</li>
+              <li>Mon</li>
+              <li>Tue</li>
+              <li>Wed</li>
+              <li>Thu</li>
+              <li>Fri</li>
+              <li>Sat</li>
+            </ul>
+            <ul class="dates">
+              <li>1</li>
+              <li>2</li>
+              <li>3</li>
+              <li>4</li>
+              <li>5</li>
+              <li>6</li>
+              <li>7</li>
+              <li>8</li>
+              <li>9</li>
+              <li>10</li>
+              <li>11</li>
+              <li>12</li>
+              <li>13</li>
+              <li>14</li>
+              <li>15</li>
+              <li>16</li>
+              <li>17</li>
+              <li>18</li>
+              <li>19</li>
+              <li>20</li>
+              <li>21</li>
+              <li>22</li>
+              <li>23</li>
+              <li>24</li>
+              <li>25</li>
+              <li>26</li>
+              <li>27</li>
+              <li>28</li>
+              <li>29</li>
+              <li>30</li>
+            </ul>
           </div>
         </div>
-  
-        <div class="calendar-body">
-          <div class="calendar-week-days">
-            <div>Sun</div>
-            <div>Mon</div>
-            <div>Tue</div>
-            <div>Wed</div>
-            <div>Thu</div>
-            <div>Fri</div>
-            <div>Sat</div>
-          </div>
-          <div class="calendar-days">
-          </div>
-        </div>
-        <div class="calendar-footer">
-        </div>
-        <div class="date-time-formate">
-          <div class="day-text-formate">TODAY</div>
-          <div class="date-time-value">
-            <div class="time-formate">01:41:20</div>
-          </div>
-        </div>
-        <div class="month-list"></div>
       </div>
 
       <div id="cal-ex">
-        <h2>Today's Workout</h2>
-
+        <h2>Workouts For The Week</h2>
+        <h2 id="dayOutput"></h2>
+        <h2 id="workOut"></h2>
       </div>
+    </div>
     </div>
 
     <div id="buttons">
@@ -137,6 +157,10 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebas
                         
                         updateButton.style.display = "block";
                         logOutButton.style.display = "block";
+
+                        if(heroData == "Batman") {
+                          
+                        }
                     }
 
 
@@ -153,148 +177,6 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebas
 
 
 
-    const isLeapYear = (year) => {
-  return (
-    (year % 4 === 0 && year % 100 !== 0 && year % 400 !== 0) ||
-    (year % 100 === 0 && year % 400 === 0)
-  );
-};
-const getFebDays = (year) => {
-  return isLeapYear(year) ? 29 : 28;
-};
-let calendar = document.querySelector('.calendar');
-const month_names = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
-  ];
-let month_picker = document.querySelector('#month-picker');
-const dayTextFormate = document.querySelector('.day-text-formate');
-const timeFormate = document.querySelector('.time-formate');
-const dateFormate = document.querySelector('.date-formate');
-
-month_picker.onclick = () => {
-  month_list.classList.remove('hideonce');
-  month_list.classList.remove('hide');
-  month_list.classList.add('show');
-  dayTextFormate.classList.remove('showtime');
-  dayTextFormate.classList.add('hidetime');
-  timeFormate.classList.remove('showtime');
-  timeFormate.classList.add('hideTime');
-  dateFormate.classList.remove('showtime');
-  dateFormate.classList.add('hideTime');
-};
-
-const generateCalendar = (month, year) => {
-  let calendar_days = document.querySelector('.calendar-days');
-  calendar_days.innerHTML = '';
-  let calendar_header_year = document.querySelector('#year');
-  let days_of_month = [
-      31,
-      getFebDays(year),
-      31,
-      30,
-      31,
-      30,
-      31,
-      31,
-      30,
-      31,
-      30,
-      31,
-    ];
-
-  let currentDate = new Date();
-
-  month_picker.innerHTML = month_names[month];
-
-  calendar_header_year.innerHTML = year;
-
-  let first_day = new Date(year, month);
-
-
-  for (let i = 0; i <= days_of_month[month] + first_day.getDay() - 1; i++) {
-
-    let day = document.createElement('div');
-
-    if (i >= first_day.getDay()) {
-      day.innerHTML = i - first_day.getDay() + 1;
-
-      if (i - first_day.getDay() + 1 === currentDate.getDate() &&
-        year === currentDate.getFullYear() &&
-        month === currentDate.getMonth()
-      ) {
-        day.classList.add('current-date');
-      }
-    }
-    calendar_days.appendChild(day);
-  }
-};
-
-let month_list = calendar.querySelector('.month-list');
-month_names.forEach((e, index) => {
-  let month = document.createElement('div');
-  month.innerHTML = `<div>${e}</div>`;
-
-  month_list.append(month);
-  month.onclick = () => {
-    currentMonth.value = index;
-    generateCalendar(currentMonth.value, currentYear.value);
-    month_list.classList.replace('show', 'hide');
-    dayTextFormate.classList.remove('hideTime');
-    dayTextFormate.classList.add('showtime');
-    timeFormate.classList.remove('hideTime');
-    timeFormate.classList.add('showtime');
-    dateFormate.classList.remove('hideTime');
-    dateFormate.classList.add('showtime');
-  };
-});
-
-(function() {
-  month_list.classList.add('hideonce');
-})();
-document.querySelector('#pre-year').onclick = () => {
-  --currentYear.value;
-  generateCalendar(currentMonth.value, currentYear.value);
-};
-document.querySelector('#next-year').onclick = () => {
-  ++currentYear.value;
-  generateCalendar(currentMonth.value, currentYear.value);
-};
-
-let currentDate = new Date();
-let currentMonth = { value: currentDate.getMonth() };
-let currentYear = { value: currentDate.getFullYear() };
-generateCalendar(currentMonth.value, currentYear.value);
-
-const todayShowTime = document.querySelector('.time-formate');
-const todayShowDate = document.querySelector('.date-formate');
-
-setInterval(() => {
-  const timer = new Date();
-  const option = {
-    hour: 'numeric',
-    minute: 'numeric',
-    second: 'numeric',
-  };
-  const formateTimer = new Intl.DateTimeFormat('en-us', option).format(timer);
-  let time = `${`${timer.getHours()}`.padStart(
-      2,
-      '0'
-    )}:${`${timer.getMinutes()}`.padStart(
-      2,
-      '0'
-    )}: ${`${timer.getSeconds()}`.padStart(2, '0')}`;
-  todayShowTime.textContent = formateTimer;
-}, 1000);
+    
 </script>
 </html>
