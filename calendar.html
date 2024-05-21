@@ -231,6 +231,8 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebas
                 })
             }else{
                 console.log("Error getting user data");
+                dayOut.innerText = "Not currently logged in...";
+                workOut.innerText = "log in or create an account to view today's workout";
             }
         })
     }
